@@ -1,6 +1,10 @@
 # jadepool-sdk-go
 
-## 例子
+## example
+
+send request
+
+see lab/apilab.go
 
 ```
 func main() {
@@ -30,4 +34,21 @@ func main() {
 	fmt.Println(balance, err)
 }
 
+```
+
+parse callback
+
+see lab/callback.go
+
+```
+	jp, _ := api.InitWith(types.JPConfig{
+		JadePubKey: "04ace32532c90652e1bae916248e427a7ab10aeeea1067949669a3f4da10965ef90d7297f538f23006a31f94fdcfaed9e8dd38c85ba7e285f727430332925aefe5",
+	})
+	o1 := []byte(order1)
+	order, err := jp.OrderCallback(o1)
+	fmt.Println(order, err)
+
+	a1 := []byte(audit1)
+	audit, err := jp.AuditCallback(a1)
+	fmt.Printf("%+v,%v", audit, err)
 ```
