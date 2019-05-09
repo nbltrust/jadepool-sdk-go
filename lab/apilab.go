@@ -1,8 +1,13 @@
-# jadepool-sdk-go
+package main
 
-## 例子
+import (
+	"fmt"
 
-```
+	"github.com/nbltrust/jadepool-sdk-go/types"
+
+	"github.com/nbltrust/jadepool-sdk-go/api"
+)
+
 func main() {
 	jp, _ := api.InitWith(types.JPConfig{
 		AppID:          "bbb",
@@ -29,5 +34,3 @@ func main() {
 	balance, err := jp.GetBalance("ETH")
 	fmt.Println(balance, err)
 }
-
-```
