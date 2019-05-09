@@ -41,6 +41,7 @@ parse callback
 see lab/callback.go
 
 ```
+func main() {
 	jp, _ := api.InitWith(types.JPConfig{
 		JadePubKey: "04ace32532c90652e1bae916248e427a7ab10aeeea1067949669a3f4da10965ef90d7297f538f23006a31f94fdcfaed9e8dd38c85ba7e285f727430332925aefe5",
 	})
@@ -51,4 +52,5 @@ see lab/callback.go
 	a1 := []byte(audit1)
 	audit, err := jp.AuditCallback(a1)
 	fmt.Printf("%+v,%v", audit, err)
+}
 ```
